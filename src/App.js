@@ -1,3 +1,6 @@
+// discord: dg0015
+
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import NytSearch from './pages/NytSearch'

@@ -3,6 +3,7 @@
     max-width: 1024px;
     background-color: #f5f0f0;
     border-radius: 2%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     /* flex-wrap: wrap; */
 }
 

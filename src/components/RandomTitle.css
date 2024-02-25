@@ -20,6 +20,7 @@
 
 .openpic {
     width: auto;
+    max-width: 80vw;
     max-height: 70vh;
 }
     

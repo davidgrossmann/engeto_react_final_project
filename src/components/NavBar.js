@@ -6,6 +6,7 @@ const NavBar = () => {
   return <header>
   <ul className='navbar'>
       <li><NavLink to='/'>Domů</NavLink></li>
+      <li><NavLink to='/qrgenerator'>QR generator</NavLink></li>
    
       <li> <NavLink to='/nytsearch' >NYT search</NavLink></li>
   </ul>

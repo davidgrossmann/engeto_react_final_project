@@ -7,6 +7,9 @@ V budoucnu bych chtěl zlepšit především nastylování stránek (soustředil
 Také trochu lépe promyslet TextBlock.js. Hlavně zjednodušení kódu kolem buttonů.
 Vylepšit kontrolu zadaných termínů při vyhledávání pomocí API NYTimes. 
 
+## Link
+Project naleznete i přímo [na webu](https://statuesque-fenglisu-36042c.netlify.app/)
+
 ## Kontakt
 dgrossmann@gmail.com
 discord: dg0015

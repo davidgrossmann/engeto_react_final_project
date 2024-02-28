@@ -5,29 +5,31 @@ const QrGenerator = () => {
   const [submitedText, setSubmitedText] = useState("");
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
+  const [text, setText] = useState("");
 
-  // isValidUrl generovalo AI
   const isValidUrl = (text) => {
-    // Regulární výraz pro ověření platnosti URL adresy (s možností začátku www)
     const urlRegex = /^(ftp|http|https):\/\/(www\.)?[^ "]+$/;
-    return urlRegex.test(text);
+    const wwwUrlRegex = /^(www\.)?[^ "]+\.[^ "]+$/;
+    return urlRegex.test(text) || wwwUrlRegex.test(text);
   };
 
   const formSubmit = (event) => {
     event.preventDefault();
-    console.log(submitedText);
 
     if (submitedText.trim() === "") {
       setError("Musíte zadat nějaký text");
+      setText("");
     } else if (isValidUrl(submitedText)) {
       setUrl(
         `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${submitedText}`
       );
       setError("");
+      setText(submitedText);
     } else {
       setUrl(
         `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${submitedText}`
       );
+      setText(submitedText);
       setError("Zadaný text není platná URL adresa. QR kód bude jen text.");
     }
     setSubmitedText("");
@@ -46,14 +48,21 @@ const QrGenerator = () => {
               value={submitedText}
               onChange={(event) => setSubmitedText(event.target.value)}
             />
-            
-            <button className="qrgenerator-btn" >Generovat QR kód</button>
+
+            <button className="qrgenerator-btn">Generovat QR kód</button>
           </form>
         </div>
 
         <div className="qrright">
           <h2>Váš QR kód</h2>
-          {url ? <img src={url} alt="qr kód" /> : <p>Čekám na zadání</p>}
+          {url ? (
+            <>
+              <img src={url} alt="qr kód" />
+              <p>{text}</p>
+            </>
+          ) : (
+            <p>Čekám na zadání</p>
+          )}
           {error && <p>{error}</p>}
         </div>
       </div>

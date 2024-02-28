@@ -1,23 +1,16 @@
 .article-component {
-    width: 20%;
-    min-width: 220px;
-    background-color: #f5f0f0;
-    border-radius: 2%;
-    padding: 10px;
-    /* margin: 0 auto; */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    /* transition: transform 0.3s ease; */
-  }
-  
-  /* .article-component:hover {
-    transform: scale(1.05);
-  }
-   */
-  
-  .article-component img {
-    width: 100%;
-  }
-  
-  .article-component h3 {
-    text-align: center;
-  }
+  width: 20%;
+  min-width: 220px;
+  background-color: #f5f0f0;
+  border-radius: 2%;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-component img {
+  width: 100%;
+}
+
+.article-component h3 {
+  text-align: center;
+}

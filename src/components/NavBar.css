@@ -1,11 +1,11 @@
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar li {
-    margin: 20px;
-    text-decoration: none;
-    list-style-type:none
+  margin: 20px;
+  text-decoration: none;
+  list-style-type: none;
 }

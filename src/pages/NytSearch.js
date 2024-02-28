@@ -1,33 +1,24 @@
-import { useEffect, useState } from 'react'
-import NytSearchResult from '../components/NytSearchResult'
-import './NytSearch.css'
-
-
-
+import { useEffect, useState } from "react";
+import NytSearchResult from "../components/NytSearchResult";
+import "./NytSearch.css";
 
 const NytSearch = () => {
-  const [searchResults, setSearchResults] = useState([])
-  const [searchedTerm, setSearchedTerm] = useState('');
-  const [term, setTerm] = useState('');
-
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchedTerm, setSearchedTerm] = useState("");
+  const [term, setTerm] = useState("");
 
   const formSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     console.log(term);
     setSearchedTerm(term);
-    setTerm('');
-
-  }
-
-
+    setTerm("");
+  };
 
   useEffect(() => {
-    console.log('useeffect ' + searchedTerm);
-    setSearchResults([])
+    console.log("useeffect " + searchedTerm);
+    setSearchResults([]);
 
     const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedTerm}&api-key=kF5neFdAJbfD3DbuuXYopll4pso6SxJw`;
-
-
 
     fetch(url)
       .then((response) => response.json())
@@ -36,16 +27,11 @@ const NytSearch = () => {
       })
 
       .catch((error) => {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       });
   }, [searchedTerm]);
 
-
-
-
   return (
-
-
     <div>
       <div className="nytsearch-top">
         <h1>NYTimes search</h1>
@@ -59,7 +45,10 @@ const NytSearch = () => {
           <button>Search</button>
         </form>
         {searchedTerm ? (
-          <p> Searched term is: <strong>{searchedTerm}</strong> </p>
+          <p>
+            {" "}
+            Searched term is: <strong>{searchedTerm}</strong>{" "}
+          </p>
         ) : (
           <p>Input term!</p>
         )}
@@ -70,17 +59,8 @@ const NytSearch = () => {
         searchResults={searchResults}
         searchedTerm={searchedTerm}
       />
-
-
-
-
-
-
-
-
     </div>
+  );
+};
 
-  )
-}
-
-export default NytSearch
+export default NytSearch;

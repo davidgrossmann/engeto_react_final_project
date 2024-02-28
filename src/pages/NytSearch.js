@@ -6,16 +6,15 @@ const NytSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchedTerm, setSearchedTerm] = useState("");
   const [term, setTerm] = useState("");
+  const [noresult, setNoresult] = useState("");
 
   const formSubmit = (event) => {
     event.preventDefault();
-    console.log(term);
     setSearchedTerm(term);
     setTerm("");
   };
 
   useEffect(() => {
-    console.log("useeffect " + searchedTerm);
     setSearchResults([]);
 
     const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedTerm}&api-key=kF5neFdAJbfD3DbuuXYopll4pso6SxJw`;
@@ -23,11 +22,17 @@ const NytSearch = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setSearchResults(data.response.docs);
+        if (data.response.docs.length === 0) {
+          setNoresult("No results! Try something else.");
+        } else {
+          setSearchResults(data.response.docs);
+          setNoresult("");
+        }
       })
 
       .catch((error) => {
         console.error("Error fetching data:", error);
+        setNoresult("Error fetching data. Please try again later.");
       });
   }, [searchedTerm]);
 
@@ -52,6 +57,11 @@ const NytSearch = () => {
         ) : (
           <p>Input term!</p>
         )}
+        {noresult ? (
+          <p>
+            <strong>{noresult}</strong>
+          </p>
+        ) : null}
       </div>
 
       <NytSearchResult

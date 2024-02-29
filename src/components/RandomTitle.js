@@ -9,7 +9,6 @@ const RandomTitle = (props) => {
         alt="uvodni_obrazek"
       />
       <h3>
-        {" "}
         <a
           href={props.title[props.number].url}
           target="_blank"

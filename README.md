@@ -4,8 +4,6 @@ Tenhle projekt jsem se hodně snažil zaměřit na práci s API. Vybral jsem si 
 
 ## Další úpravy
 V budoucnu bych chtěl zlepšit především nastylování stránek (soustředil jsem se hlavně na funkčnost react aplikace)
-Také trochu lépe promyslet TextBlock.js. Hlavně zjednodušení kódu kolem buttonů.
-Vylepšit kontrolu zadaných termínů při vyhledávání pomocí API NYTimes. 
 
 ## Link
 Project naleznete i přímo [na webu](https://statuesque-fenglisu-36042c.netlify.app/)

@@ -51,8 +51,7 @@ const NytSearch = () => {
         </form>
         {searchedTerm ? (
           <p>
-            {" "}
-            Searched term is: <strong>{searchedTerm}</strong>{" "}
+            Searched term is: <strong>{searchedTerm}</strong>
           </p>
         ) : (
           <p>Input term!</p>

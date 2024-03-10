@@ -1,5 +1,4 @@
 .article-component {
-  width: 20%;
   min-width: 220px;
   background-color: #f5f0f0;
   border-radius: 2%;
@@ -13,4 +12,10 @@
 
 .article-component h3 {
   text-align: center;
+}
+
+@media screen and (min-width: 440px) {
+  .article-component {
+    width: 20%;
+  }
 }

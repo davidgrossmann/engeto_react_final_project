@@ -40,9 +40,9 @@ const NytSearchResult = (props) => {
             />
           )}
           <p>
-            {props.searchResults[index].lead_paragraph}
+            {props.searchResults[index].lead_paragraph + " "}
             <a href={props.searchResults[index].web_url} target="blank">
-              More...
+               More...
             </a>
           </p>
 
@@ -61,7 +61,7 @@ const NytSearchResult = (props) => {
               <div key={index}>
                 <h3>{otherResult.headline.main}</h3>
                 <p>
-                  {otherResult.lead_paragraph}
+                  {otherResult.lead_paragraph + " "} 
                   <a href={otherResult.web_url} target="blank">
                     More...
                   </a>
